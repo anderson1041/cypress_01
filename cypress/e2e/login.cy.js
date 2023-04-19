@@ -20,5 +20,15 @@ describe('Login', () => {
     cy.get('.login-form > form > p').should('be.visible').and('contain','Your email or password is incorrect!')
   
   })
- 
+  
+  it('Acessando a tela de registro',() =>{
+    cy.visit('https://www.automationexercise.com/')
+
+    cy.get('.shop-menu > .nav > :nth-child(4) > a').click();
+    cy.get('[data-qa="signup-name"]').type('Anderson Lima');
+    cy.get('[data-qa="signup-email"]').type('meuemail@email.com');
+    cy.get('[data-qa="signup-button"]').click();
+    cy.get(':nth-child(1) > b').should('be.visible');
+
+  })
 })
