@@ -6,5 +6,5 @@ describe('Login e Registro de usuários', () => {
 
 it ('Tentativa de Login com user inexistente'),() =>{
   //seleciona um elemento com a escrita resgister now e clica
-  cy.contains('a', 'Signup / Login').click();
+  cy.get('.shop-menu > .nav > :nth-child(4) > a').click();
 }
