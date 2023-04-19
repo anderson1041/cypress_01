@@ -31,4 +31,17 @@ describe('Login', () => {
     cy.get(':nth-child(1) > b').should('be.visible');
 
   })
+
+  it('Criação de usuário', ()=>{
+    cy.visit('https://www.automationexercise.com/')
+
+    cy.get('.shop-menu > .nav > :nth-child(4) > a').click();
+    cy.get('[data-qa="signup-name"]').type('Anderson Lima');
+    cy.get('[data-qa="signup-email"]').type('meuemail@email.com');
+    cy.get('[data-qa="signup-button"]').click();
+    cy.get(':nth-child(1) > b').should('be.visible');
+
+    cy.get('#id_gender1').click();
+    cy.get('[data-qa="password"]').type('password');
+  })
 })
